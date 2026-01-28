@@ -9,7 +9,7 @@ blueprint:
       default: en
       selector:
         language:
-          languages: [de, en, fr, it, pl]
+          languages: [de, en, fr, it]
     command_prompt:
       name: Command Text
       description: The phrase you want to use to trigger the automation
@@ -48,10 +48,7 @@ action:
             spell: "{word} wird buchstabiert ... {spaced_text}"
         fr:
           responses:
-            spell: "{word} s'écrit ... {spaced_text}"
-        pl:
-          responses:
-            spell: "{word} pisze się ... {spaced_text}"
+            spell: "{word} s’écrit ... {spaced_text}"
 
       conversation_response: >-
         {{ translations[language]['responses']['spell'].replace("{word}", trigger.slots.word).replace("{spaced_text}", spaced_text) }}
